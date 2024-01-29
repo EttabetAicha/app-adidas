@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Clients;
+
 class ClientController extends Controller
 {
     public function index()
@@ -35,12 +36,11 @@ class ClientController extends Controller
       
         public function update(Request $request, $id)
         {
-            $clients = Clients::find($id);
-            $input = $request->all();
-            $clients->update($input);
-            return redirect('clients')->with('flash_message', 'clients Updated!');  
+            $client = Clients::find($id);
+            $client->update($request->all());
+            return redirect('clients')->with('flash_message', 'Client updated!');
         }
-      
+        
         public function destroy($id)
         {
             Clients::destroy($id);

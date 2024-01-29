@@ -9,13 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('client_name');
+            $table->string('email');
+            $table->string('credit_card');
+            $table->string('address');
+            $table->timestamps(); 
         });
     }
+    
 
     /**
      * Reverse the migrations.

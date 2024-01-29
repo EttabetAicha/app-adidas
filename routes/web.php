@@ -15,15 +15,21 @@ use App\Http\Controllers\ClientController;
 */
 
 
-Route::get('/', [ClientController::class, 'index']);
+Route::get('/clients', [ClientController::class, 'index']);
+
+Route::get('/clients/create', [ClientController::class, 'create'])->name('clients.create');
 
 Route::post('/clients', [ClientController::class, 'store']);
 
 Route::get('/clients/{id}', [ClientController::class, 'show']);
 
 Route::get('/clients/{id}/edit', [ClientController::class, 'edit']);
+
+Route::patch('/clients/{id}', [ClientController::class, 'update']);
  
 Route::delete('/clients/{id}', [ClientController::class, 'destroy']);
+
+
 
 
 
