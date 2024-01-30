@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +60,18 @@ Route::get('/products/{id}/edit', [ProductController::class, 'edit']);
 Route::patch('/products/{id}', [ProductController::class, 'update']);
  
 Route::delete('/products/{id}', [ProductController::class, 'destroy']);
+//////////////////////////////////////////////////////////////////////////////////////
+
+Route::get('/sales', [App\Http\Controllers\SaleController::class, 'index']);
+
+Route::get('/sales/create', [App\Http\Controllers\SaleController::class, 'create'])->name('sales.create');
+
+Route::post('/sales', [App\Http\Controllers\SaleController::class,'store']);
+
+Route::get('/sales/{id}', [App\Http\Controllers\SaleController::class,'show']);
+
+Route::get('/sales/{id}/edit', [App\Http\Controllers\SaleController::class, 'edit']);
+
+Route::patch('/sales/{id}', [App\Http\Controllers\SaleController::class, 'update']);
+ 
+Route::delete('/sales/{id}', [App\Http\Controllers\SaleController::class, 'destroy']);
