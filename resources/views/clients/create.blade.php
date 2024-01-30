@@ -7,7 +7,7 @@
                 Create New Client
             </div>
             <div class="card-body">
-                <form action="{{ url('clients') }}" method="post">
+                <form action="{{ url('clients') }}" method="post">  
                     @csrf
 
                     <div class="mb-3">
