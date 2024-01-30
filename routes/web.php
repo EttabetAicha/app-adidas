@@ -47,3 +47,15 @@ Route::patch('/category/{id}', [CategoryController::class, 'update']);
 Route::delete('/category/{id}', [CategoryController::class, 'destroy']);
 ///////////////////////////////////////////////////////////////////////////////////
 Route::get('/products', [ProductController::class, 'index']);
+
+Route::get('/products/create', [ProductController::class, 'create'])->name('categories.create');
+
+Route::post('/products', [ProductController::class, 'store']);
+
+Route::get('/products/{id}', [ProductController::class, 'show']);
+
+Route::get('/products/{id}/edit', [ProductController::class, 'edit']);
+
+Route::patch('/products/{id}', [ProductController::class, 'update']);
+ 
+Route::delete('/products/{id}', [ProductController::class, 'destroy']);

@@ -23,15 +23,25 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'product_name' => 'required',
+            'description' => 'required',
+            'price' => 'required|numeric',
+            'category_id' => 'required|exists:categories,category_id',
+            'images' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+    
         $input = $request->all();
-
-        // Check if 'category_id' is provided in the request
-        if (!$request->has('category_id')) {
-            // Handle the case where category_id is missing
-            return redirect()->back()->with('error', 'Please select a category.');
-        }
-
+    
+       
+    if ($request->hasFile('images')) {
+        $imageName = $request->file('images')->getClientOriginalName();
+        $request->file('images')->move(public_path('assets'), $imageName);
+        $input['images'] =  $imageName;
+    }
+    
         Products::create($input);
+    
         return redirect('products')->with('flash_message', 'Product added!');
     }
 
