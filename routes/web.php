@@ -17,7 +17,10 @@ use App\Http\Controllers\SaleController;
 |
 */
 
-
+Route::get('/', function () {
+    return view('dashboard');
+});
+ 
 Route::get('/clients', [ClientController::class, 'index']);
 
 Route::get('/clients/create', [ClientController::class, 'create'])->name('clients.create');
