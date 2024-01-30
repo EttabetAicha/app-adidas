@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,5 @@ Route::get('/category/{id}/edit', [CategoryController::class, 'edit']);
 Route::patch('/category/{id}', [CategoryController::class, 'update']);
  
 Route::delete('/category/{id}', [CategoryController::class, 'destroy']);
-
-
-
+///////////////////////////////////////////////////////////////////////////////////
+Route::get('/products', [ProductController::class, 'index']);
