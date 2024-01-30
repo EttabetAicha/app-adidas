@@ -5,6 +5,10 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SaleController;
+use App\Http\Controllers\dashboardController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +21,8 @@ use App\Http\Controllers\SaleController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/', [dashboardController::class, 'index']);
+
  
 Route::get('/clients', [ClientController::class, 'index']);
 

@@ -29,6 +29,23 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            @foreach ($products as $product)
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="{{ asset('assets/' . $product->images) }}" class="card-img-top" alt="Product Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $product->product_name }}</h5>
+                            <p class="card-text">{{ $product->description }}</p>
+                            <p class="card-text"><strong>Price: ${{ $product->price }}</strong></p>
+                            <p class="card-text"><strong>Category: </strong>{{ $product->category ? $product->category->category_name : 'N/A' }}</p>
+                            <a href="#" class="btn btn-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        
     </div>
 
     <!-- Include Bootstrap JS (optional) -->
