@@ -20,7 +20,7 @@ class CategoryController extends Controller
         {
             $input = $request->all();
             Category::create($input);
-            return redirect('categories')->with('flash_message', 'category Addedd!');  
+            return redirect('category')->with('flash_message', 'category Addedd!');  
         }
         
         public function show($id)
@@ -38,13 +38,13 @@ class CategoryController extends Controller
         {
             $category = Category::find($id);
             $category->update($request->all());
-            return redirect('categories')->with('flash_message', 'Category updated!');
+            return redirect('category')->with('flash_message', 'Category updated!');
         }
         
         public function destroy($id)
         {
             Category::destroy($id);
-            return redirect('categories')->with('flash_message', 'category deleted!');  
+            return redirect('category')->with('flash_message', 'category deleted!');  
         }
         
 }
