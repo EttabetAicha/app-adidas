@@ -7,9 +7,6 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\dashboardController;
 
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
