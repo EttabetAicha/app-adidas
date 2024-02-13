@@ -18,9 +18,10 @@ use App\Http\Controllers\dashboardController;
 |
 */
 
-Route::get('/', [dashboardController::class, 'index']);
+Route::view('/','index');
 
- 
+Route::get('/dashboard', [dashboardController::class, 'index']);
+
 Route::get('/clients', [ClientController::class, 'index']);
 
 Route::get('/clients/create', [ClientController::class, 'create'])->name('clients.create');

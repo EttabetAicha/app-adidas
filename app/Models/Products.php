@@ -18,6 +18,6 @@ class Products extends Model
 
     public function sales()
     {
-        return $this->hasMany(Sale::class);
+        return $this->hasMany(Sales::class);
     }
 }

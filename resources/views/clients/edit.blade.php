@@ -7,7 +7,7 @@
                 Edit Client
             </div>
             <div class="card-body">
-                <form action="{{ url('clients/' . $clients->id_client) }}" method="post">
+                <form action="{{ url('clients/' . $clients->id) }}" method="post">
                     @csrf
                     @method("PATCH")
 

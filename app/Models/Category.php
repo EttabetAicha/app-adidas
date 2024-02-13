@@ -9,10 +9,10 @@ class Category extends Model
 {
     use HasFactory;
     protected $table = 'categories';
-    protected $primaryKey = 'category_id';
+    // protected $primaryKey = 'category_id';
     protected $fillable = ['category_name'];
     public function products()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Products::class);
     }
 }

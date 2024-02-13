@@ -27,9 +27,9 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->category_name }}</td>
                                         <td class="d-flex">
-                                            <a href="{{ url('/category/' . $item->category_id) }}" title="View category" class="btn btn-info btn-sm me-1"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
-                                            <a href="{{ url('/category/' . $item->category_id . '/edit') }}" title="Edit category" class="btn btn-primary btn-sm me-1"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                                            <form method="POST" action="{{ url('/category/' . $item->category_id) }}" accept-charset="UTF-8" style="display:inline">
+                                            <a href="{{ url('/category/' . $item->id) }}" title="View category" class="btn btn-info btn-sm me-1"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                            <a href="{{ url('/category/' . $item->id . '/edit') }}" title="Edit category" class="btn btn-primary btn-sm me-1"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                                            <form method="POST" action="{{ url('/category/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete category" onclick="return confirm('Confirm delete?')">

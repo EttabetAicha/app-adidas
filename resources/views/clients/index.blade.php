@@ -34,9 +34,9 @@
                                         <td>{{ $item->credit_card }}</td>
                                         <td>{{ $item->address }}</td>
                                         <td class="d-flex">
-                                            <a href="{{ url('/clients/' . $item->id_client) }}" title="View Client" class="btn btn-info btn-sm me-1"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
-                                            <a href="{{ url('/clients/' . $item->id_client . '/edit') }}" title="Edit Client" class="btn btn-primary btn-sm me-1"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
-                                            <form method="POST" action="{{ url('/clients/' . $item->id_client) }}" accept-charset="UTF-8" style="display:inline">
+                                            <a href="{{ url('/clients/' . $item->id) }}" title="View Client" class="btn btn-info btn-sm me-1"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                            <a href="{{ url('/clients/' . $item->id . '/edit') }}" title="Edit Client" class="btn btn-primary btn-sm me-1"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</a>
+                                            <form method="POST" action="{{ url('/clients/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 @method('DELETE')
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete Client" onclick="return confirm('Confirm delete?')">

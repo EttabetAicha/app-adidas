@@ -7,7 +7,7 @@
                 Edit category
             </div>
             <div class="card-body">
-                <form action="{{ url('category/' . $category->category_id) }}" method="post">
+                <form action="{{ url('category/' . $category->id) }}" method="post">
                     @csrf
                     @method("PATCH")
 
